@@ -65,14 +65,11 @@ function CountryList() {
       .catch(() => {
         console.log("hubo un error");
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>
       <CountryListStyled>
-        {/* <div> */}
-
-        {/* </div> */}
         {countryList.map(
           ({ name, flag, population, region, capital, alpha2Code }) => {
             return (
