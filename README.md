@@ -4,7 +4,7 @@ Web app using ReactJs, Redux, Hooks, and [https://restcountries.eu/](https://res
 
 - Try demo [https://yesmeMorales.github.io/flags-project-react/](https://yesmeMorales.github.io/flags-project-react/).
 
-![flags-project-react](./public/desktop-design-home-dark)
+![flags-project-react](./public/desktop-design-home-dark.jpg)
 
 ## Inicialize the project
 
