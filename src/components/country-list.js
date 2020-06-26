@@ -3,17 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 
 import styled from "styled-components";
 import Country from "./country";
+import Wrapper from "./wrapper";
 
 const CountryListStyled = styled.div`
   display: grid;
   row-gap: 2.3em;
-  /* grid-auto-flow: column;
-  grid-column-gap: 66px;
-  grid-template-columns: repeat(auto-fill, 270px); */
+  grid-auto-flow: columns;
+  grid-column-gap: 60px;
+  grid-template-columns: repeat(auto-fill, 275px);
   background: var(--background);
 
   justify-content: center;
-  padding: 2em 1em;
+  padding: 3em 0;
 `;
 
 function CountryList() {
@@ -35,10 +36,14 @@ function CountryList() {
       console.log("lista por region");
       return countryListByRegion;
     }
-    if (state.filterByName === "" && state.filterByRegion === "") {
+    if (
+      (state.filterByName === "" && state.filterByRegion === "") ||
+      countryListByName === undefined
+    ) {
       console.log("lista general");
       return state.countryList;
     }
+    return state.countryList;
   });
 
   // const [countryList, setCountryList] = useState([]);
@@ -63,23 +68,28 @@ function CountryList() {
   }, []);
 
   return (
-    <CountryListStyled>
-      {/* <div> */}
+    <Wrapper>
+      <CountryListStyled>
+        {/* <div> */}
 
-      {/* </div> */}
-      {countryList.map(({ name, flag, population, region, capital }) => {
-        return (
-          <Country
-            key={name}
-            flag={flag}
-            name={name}
-            population={population}
-            region={region}
-            capital={capital}
-          />
-        );
-      })}
-    </CountryListStyled>
+        {/* </div> */}
+        {countryList.map(
+          ({ name, flag, population, region, capital, alpha2Code }) => {
+            return (
+              <Country
+                key={name}
+                flag={flag}
+                name={name}
+                population={population}
+                region={region}
+                capital={capital}
+                alpha2Code={alpha2Code}
+              />
+            );
+          }
+        )}
+      </CountryListStyled>
+    </Wrapper>
   );
 }
 

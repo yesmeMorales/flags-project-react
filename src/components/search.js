@@ -5,11 +5,13 @@ import { useDispatch } from "react-redux";
 import Input from "./input";
 
 const SearchStyled = styled.div`
+  padding: 0 1.5em;
   display: flex;
   position: relative;
+
   .close {
     position: absolute;
-    right: 1em;
+    right: 2.5em;
     top: 1em;
     border-radius: 50%;
     border: none;

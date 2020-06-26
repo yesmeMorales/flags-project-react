@@ -19,3 +19,30 @@ main {
   background: var(--background);
   min-height: 100vh;
 }
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.is-dark-mode {
+  --black: white;
+  --white: #273542;
+  --background: #1a2833;
+}
+
+.is-light-mode {
+  --black: #111517;
+  --white: white;
+  --background: #fafafa;
+}
+
+/*Podemos detectar un media query por javascript para saber si está
+en modo obscuro y cargarlo asi cuando recarguemos*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: white;
+    --white: #273542;
+    --background: #1a2833;
+  }
+}

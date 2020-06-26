@@ -4,7 +4,9 @@ import { useDispatch } from "react-redux";
 
 import Select from "./select";
 
-const FilterByRegionStyled = styled.div``;
+const FilterByRegionStyled = styled.div`
+  width: 197px;
+`;
 
 function FilterByRegion() {
   const dispatch = useDispatch();

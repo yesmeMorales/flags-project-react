@@ -5,10 +5,16 @@ import FilterByRegion from "./filterbyregion";
 import Wrapper from "./wrapper";
 
 const ActionListStyled = styled.div`
+  padding: 0 1em;
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 40px;
+    row-gap: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    .grid {
+      grid-template-columns: 480px 1fr 200px;
+    }
   }
 `;
 
@@ -18,6 +24,7 @@ function ActionList() {
       <Wrapper>
         <div className="grid">
           <Search />
+          <span></span>
           <FilterByRegion />
         </div>
       </Wrapper>

@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const SelectStyled = styled.div`
+  padding: 0 1.5em;
+
   .form-control {
+    background: var(--white);
+    color: var(--black);
     padding: 1.3em;
     display: flex;
     border: none;
