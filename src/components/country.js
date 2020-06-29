@@ -26,13 +26,19 @@ const CountryStyled = styled.div`
     border-top: none;
   }
   .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 1.5em;
+    height: 195px;
     /*creamos un borde transparente que este en todo momento para evitar que se mueva al
     ponerselo cuando hacemos hover*/
     border: 1px solid transparent;
     border-top: none;
     transition: 0.3s border;
     background: var(--white);
+  }
+  .extra-details {
   }
   h2 {
     margin: 0;
@@ -58,15 +64,17 @@ function Country({ flag, name, population, region, capital, alpha2Code }) {
       <img loading="lazy" src={flag} alt={name} />
       <div className="details">
         <h2>{name}</h2>
-        <p>
-          <strong>Population: </strong> {population}
-        </p>
-        <p>
-          <strong>Region: </strong> {region}
-        </p>
-        <p>
-          <strong>Capital: </strong> {capital}
-        </p>
+        <div className="extra-details">
+          <p>
+            <strong>Population: </strong> {population}
+          </p>
+          <p>
+            <strong>Region: </strong> {region}
+          </p>
+          <p>
+            <strong>Capital: </strong> {capital}
+          </p>
+        </div>
       </div>
     </CountryStyled>
   );
